@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Image Toggle</title>
+ <style>
+  body {
+   text-align: center;
+   padding: 50px;
+   background-color: #f0f0f0;
+  }
+
+  .image-container {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+  }
+
+  .image-container img {
+   height: 100px;
+   width: 100px;
+  }
+
+  button {
+   padding: 10px 20px;
+   font-size: 16px;
+   margin: 10px;
+   background-color: #4CAF50;
+  }
+
+  button:hover {
+   background-color: #45a049;
+  }
+ </style>
+</head>
+
+<body>
+ <div class="image-container">
+  <img src="bulboff.jpg" alt="Bulb Off">
+  <img src="bulboff.jpg" alt="Bulb Off">
+  <img src="bulboff.jpg" alt="Bulb Off">
+  <img src="bulboff.jpg" alt="Bulb Off">
+  <img src="bulboff.jpg" alt="Bulb Off">
+  <!-- <img src="https://i.pinimg.com/564x/e0/fd/25/e0fd25f9127a9a109a0648c83ee61643.jpg" alt="Bulb Off"> -->
+
+ </div>
+ <div>
+  <button onclick="on()">On</button>
+  <button onclick="off()">Off</button>
+ </div>
+ <script>
+  function on() {
+   for (let i = 0; i <= 4; i++) {
+    setTimeout(function () {
+     document.getElementsByTagName('img')[i].src ="bulbon.png";
+    }, i * 1000);
+   }
+  }
+  function off() {
+   for (let i = 0; i <= 4; i++) {
+    setTimeout(function () {
+     document.getElementsByTagName('img')[i].src ="bulboff.jpg";
+    }, (5 - i) * 1000);
+   }
+  }
+ </script>
+</body>
+
+</html>
